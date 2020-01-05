@@ -1,0 +1,127 @@
+.slider_section {
+  padding-top: 1px;
+  background: url("/images/bg-news.jpg") no-repeat center top;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__h1 {
+    display: inline-block;
+    text-align: center;
+    font-size: 44px;
+    font-weight: 500;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 170px;
+    position: relative;
+  }
+  &__h1::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 100px;
+    height: 2px;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.slider {
+  @include size(100%);
+  margin-bottom: 140px;
+
+  &__item {
+    width: 375px;
+    height: 480px;
+    margin: 100px 20px;
+    position: relative;
+    background-color: #fff;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 10%;
+    color: #000;
+    text-align: center;
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  &__text {
+    font-family: $open;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 23px;
+    margin-bottom: 25px;
+  }
+  &__round-img {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+  }
+  &__round-text {
+    position: absolute;
+    bottom: 15px;
+    right: 5px;
+    display: inline-block;
+  }
+  .slick {
+    &-arrow {
+      z-index: 9;
+      transform: scale(2);
+      color: #000;
+    }
+    &-prev::before {
+      content: "\003C";
+      line-height: 30px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      display: inline-block;
+    }
+    &-next::before {
+      content: "\003E";
+      line-height: 30px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      display: inline-block;
+    }
+
+    &-prev {
+      left: -50px;
+    }
+    &-next {
+      right: -50px;
+    }
+    &-dots {
+      bottom: 25px;
+      li button::before {
+        color: #fff;
+
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+      }
+      li.slick-active button::before {
+        opacity: 0.9;
+        background-color: #fff;
+      }
+    }
+  }
+}
+.slick-dotted.slick-slider {
+  margin-bottom: 50px;
+}

@@ -1,0 +1,39 @@
+.fixed-nav {
+  position: fixed;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  z-index: 20;
+  mix-blend-mode: darken;
+}
+.fixed-nav a {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid $hover;
+  position: relative;
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: all 0.3s;
+  mix-blend-mode: darken;
+}
+.fixed-nav a:hover,
+.fixed-nav .active {
+  color: $hover;
+  background-color: $hover;
+  mix-blend-mode: darken;
+}
+.fixed-nav a span {
+  transition: all 0.5s;
+  position: absolute;
+  right: -120px;
+  opacity: 0;
+  mix-blend-mode: darken;
+}
+.fixed-nav a:hover span,
+.fixed-nav a.active span {
+  right: 30px;
+  opacity: 1;
+  mix-blend-mode: darken;
+}
